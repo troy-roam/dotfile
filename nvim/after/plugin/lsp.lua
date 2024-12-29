@@ -17,6 +17,18 @@ require('mason-lspconfig').setup({
 -- require('lspconfig').tsserver.setup({})
 require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').gopls.setup({})
+require'lspconfig'.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
+}
 
 local cmp        = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
