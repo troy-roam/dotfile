@@ -1,0 +1,4 @@
+copy-on-select = true
+font-family    = "MesloLGS NF Regular"
+theme          = light:"Chalk",dark:"Chalk"
+font-feature   = -calt
