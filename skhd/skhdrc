@@ -1,0 +1,5 @@
+# maximize a window
+ctrl + shift - m : yabai -m window --toggle zoom-fullscreen
+
+# balance out tree of windows (resize to occupy same area)
+ctrl + shift - e : yabai -m space --balance
