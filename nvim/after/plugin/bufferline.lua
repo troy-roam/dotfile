@@ -1,5 +1,6 @@
 require("bufferline").setup{
     options = {
+        themable = false,
         mode = "tabs",
         separator_style = "",
         name_formatter = function(buf)  -- buf contains:

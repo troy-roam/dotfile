@@ -215,10 +215,10 @@ vim.g.floaterm_borderchars  = '─│─│╭╮╯╰'
 
 -- https://github.com/folke/tokyonight.nvim
 -- vim.cmd[[colorscheme tokyonight-night]]
-vim.cmd[[colorscheme nord]]
+-- vim.cmd[[colorscheme nord]]
 -- vim.cmd[[colorscheme tokyonight-storm]]
 -- vim.cmd[[colorscheme tokyonight-moon]]
--- vim.cmd[[colorscheme tokyonight-day]]
+vim.cmd[[colorscheme tokyonight-day]]
 -- colorscheme tokyonight-moon
 -- vim.cmd[[colorscheme tokyonight-storm]]
 -- vim.cmd[[colorscheme nightfox]]
