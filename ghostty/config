@@ -1,5 +1,5 @@
 copy-on-select       = true
-font-family          = "MesloLGS NF Regular"
+font-family          = "MesloLGS Nerd Font"
 theme                = light:"tokyonight-day",dark:"tokyonight"
 font-feature         = -calt
 font-size            = 15

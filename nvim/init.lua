@@ -214,17 +214,32 @@ vim.g.floaterm_height       = 0.8
 vim.g.floaterm_borderchars  = '─│─│╭╮╯╰'
 
 -- https://github.com/folke/tokyonight.nvim
--- vim.cmd[[colorscheme tokyonight-night]]
 -- vim.cmd[[colorscheme nord]]
 -- vim.cmd[[colorscheme tokyonight-storm]]
 -- vim.cmd[[colorscheme tokyonight-moon]]
-vim.cmd[[colorscheme tokyonight-day]]
 -- colorscheme tokyonight-moon
 -- vim.cmd[[colorscheme tokyonight-storm]]
 -- vim.cmd[[colorscheme nightfox]]
 -- vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
 -- vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]] -- for nvimtree transparant
 -- vim.cmd[[hi Normal guibg=NONE]]
+
+local function set_theme()
+    local hour = tonumber(os.date("%H")) 
+
+    if hour >= 7 and hour < 18 then
+        vim.cmd[[colorscheme tokyonight-day]]
+    else
+        vim.cmd[[colorscheme tokyonight-night]]
+    end
+end
+
+set_theme()
+
+local timer = vim.loop.new_timer()
+timer:start(0, 60000, vim.schedule_wrap(function()
+    set_theme()
+end))
 
 ------------------------------ lsp ----------------------------
 vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end)
