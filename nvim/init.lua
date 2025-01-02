@@ -225,7 +225,7 @@ vim.g.floaterm_borderchars  = '─│─│╭╮╯╰'
 -- vim.cmd[[hi Normal guibg=NONE]]
 
 local function set_theme()
-    local hour = tonumber(os.date("%H")) 
+    local hour = tonumber(os.date("%H"))
 
     if hour >= 7 and hour < 18 then
         vim.cmd[[colorscheme tokyonight-day]]

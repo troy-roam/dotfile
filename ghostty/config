@@ -1,5 +1,8 @@
 copy-on-select       = true
-font-family          = "MesloLGS Nerd Font"
+font-family          = "Fira Code"
+font-family-bold     = "Fira Code"
 theme                = light:"tokyonight-day",dark:"tokyonight"
 font-feature         = -calt
 font-size            = 15
+keybind              = super+control+p=previous_tab
+keybind              = super+control+n=next_tab
