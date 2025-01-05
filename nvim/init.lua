@@ -58,16 +58,16 @@ require("lazy").setup({
     {'nvim-lualine/lualine.nvim'},
     {"EdenEast/nightfox.nvim" },
     {"nvim-treesitter/nvim-treesitter-context"},
-    {
-        "OXY2DEV/markview.nvim",
-        lazy = false,      -- Recommended
-        -- ft = "markdown" -- If you decide to lazy-load anyway
+    -- {
+    --     "OXY2DEV/markview.nvim",
+    --     lazy = false,      -- Recommended
+    --     -- ft = "markdown" -- If you decide to lazy-load anyway
 
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-tree/nvim-web-devicons"
-        }
-    },
+    --     dependencies = {
+    --         "nvim-treesitter/nvim-treesitter",
+    --         "nvim-tree/nvim-web-devicons"
+    --     }
+    -- },
     -- {
     --     "lukas-reineke/indent-blankline.nvim",
     --     main = "ibl",
