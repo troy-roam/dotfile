@@ -1,7 +1,7 @@
 copy-on-select       = true
-font-family          = "Fira Code"
-font-family-bold     = "Fira Code"
-font-family-italic   = "Fira Code"
+# font-family          = "Fira Code"
+# font-family-bold     = "Fira Code"
+# font-family-italic   = "Fira Code"
 theme                = light:"tokyonight-day",dark:"tokyonight"
 font-feature         = -calt
 font-size            = 15

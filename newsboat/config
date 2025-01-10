@@ -1,0 +1,3 @@
+cache-file ~/.config/newsboat/cache.db
+confirm-exit yes
+browser "open"
