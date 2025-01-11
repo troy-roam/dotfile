@@ -58,103 +58,13 @@ require("lazy").setup({
     {'nvim-lualine/lualine.nvim'},
     {"EdenEast/nightfox.nvim" },
     {"nvim-treesitter/nvim-treesitter-context"},
-    -- {
-    --     "OXY2DEV/markview.nvim",
-    --     lazy = false,      -- Recommended
-    --     -- ft = "markdown" -- If you decide to lazy-load anyway
-
-    --     dependencies = {
-    --         "nvim-treesitter/nvim-treesitter",
-    --         "nvim-tree/nvim-web-devicons"
-    --     }
-    -- },
-    -- {
-    --     "lukas-reineke/indent-blankline.nvim",
-    --     main = "ibl",
-    --     ---@module "ibl"
-    --     ---@type ibl.config
-    --     opts = {},
-    -- },
-    -- {
-    --     "shellRaining/hlchunk.nvim",
-    --     event = { "BufReadPre", "BufNewFile" },
-    --     config = function()
-    --         require("hlchunk").setup({
-    --             chunk = {
-    --                 enable = false
-    --                 -- ...
-    --             },
-    --             indent = {
-    --                 enable = true,
-    --                 chars = {
-    --                     "│",
-    --                     -- "¦",
-    --                     -- "┆",
-    --                     -- "┊",
-    --                 },
-    --                 -- ...
-    --             }
-    --         })
-    --     end
-    -- },
-   -- {
-   --  "folke/noice.nvim",
-   --  event = "VeryLazy",
-   --  opts = {
-   --    -- add any options here
-   --    messages = { view = "mini", view_warn = "mini" },
-   --    routes = {
-   --      { filter = { event = "notify", find = "No information available" }, opts = { skip = true } },
-   --    },
-   --  },
-   --  dependencies = {
-   --    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-   --    "MunifTanjim/nui.nvim",
-   --    -- OPTIONAL:
-   --    --   `nvim-notify` is only needed, if you want to use the notification view.
-   --    --   If not available, we use `mini` as the fallback
-   --    "rcarriga/nvim-notify",
-   --    }
-  -- },
-  -- {
-  --   'mrcjkb/rustaceanvim',
-  --   version = '^5', -- Recommended
-  --   lazy = false, -- This plugin is already lazy
-  -- }
-    {
-        "apple/pkl-neovim",
-        lazy = true,
-        ft = "pkl",
-        dependencies = {
-            {
-                "nvim-treesitter/nvim-treesitter",
-                build = function(_)
-                    vim.cmd("TSUpdate")
-                end,
-            },
-            "L3MON4D3/LuaSnip",
-        },
-        build = function()
-            require('pkl-neovim.internal').init()
-
-            -- Set up syntax highlighting.
-            vim.cmd("TSInstall! pkl")
-        end,
-        config = function()
-            -- Set up snippets.
-            require("luasnip.loaders.from_snipmate").lazy_load()
-        end,
-    },
-    {
-        "shaunsingh/nord.nvim"
-    },
+    -- {"shaunsingh/nord.nvim"},
     {
         "ggandor/leap.nvim",
         config = function()
             -- require('leap').create_default_mappings()
         end,
-    }
-
+    },
 })
 
 ---------------------------------- lazy end ------------------------------------
@@ -164,13 +74,8 @@ vim.o.background = "dark" -- "dark" or "light" for light mode
 
 vim.cmd('abb idbg fmt.Printf(\"debug: %+v\\n\",')
 vim.cmd('abb ierr if err != nil {')
-vim.cmd('abb iuid 3779255524')
 vim.cmd([[inoreabbrev itime <c-r>=strftime("%Y/%m/%d %H:%M:%S")<CR>]])
 vim.cmd([[inoreabbrev idate <c-r>=strftime("%Y_%m_%d")<CR>]])
-vim.cmd([[inoreabbrev icmt // Copyright(C) 2023 Baidu Inc. All Rights Reserved.<CR>
-            \//<CR>
-            \// Author  tao (yangtao23@baidu.com)<CR>
-            \// Date    <c-r>=strftime("%Y/%m/%d %H:%M:%S")<CR>]])
 
 -- https://github.com/banga/git-split-diffs
 
@@ -182,6 +87,19 @@ vim.keymap.set('n', '<leader>k', '<C-w>k')
 vim.keymap.set('n', '<leader>l', '<C-w>l')
 vim.keymap.set('n', '<leader>n', 'gt')
 vim.keymap.set('n', '<leader>N', 'gT')
+vim.keymap.set("n", "<leader>e", vim.cmd.TagbarToggle)
+vim.keymap.set('n', '<C-n>', vim.cmd.FloatermToggle)
+
+vim.keymap.set('n', '<leader>1', ':BufferLineGoToBuffer 1<CR>')
+vim.keymap.set('n', '<leader>2', ':BufferLineGoToBuffer 2<CR>')
+vim.keymap.set('n', '<leader>3', ':BufferLineGoToBuffer 3<CR>')
+vim.keymap.set('n', '<leader>4', ':BufferLineGoToBuffer 4<CR>')
+vim.keymap.set('n', '<leader>5', ':BufferLineGoToBuffer 5<CR>')
+vim.keymap.set('n', '<leader>6', ':BufferLineGoToBuffer 6<CR>')
+vim.keymap.set('n', '<leader>7', ':BufferLineGoToBuffer 7<CR>')
+vim.keymap.set('n', '<leader>8', ':BufferLineGoToBuffer 8<CR>')
+vim.keymap.set('n', '<leader>9', ':BufferLineGoToBuffer 9<CR>')
+vim.keymap.set('n', '<leader>0', ':BufferLineGoToBuffer -1<CR>')
 
 vim.opt.guicursor     = ""
 vim.opt.expandtab     = true
@@ -213,22 +131,11 @@ vim.g.floaterm_width        = 0.7
 vim.g.floaterm_height       = 0.8
 vim.g.floaterm_borderchars  = '─│─│╭╮╯╰'
 
--- https://github.com/folke/tokyonight.nvim
--- vim.cmd[[colorscheme nord]]
--- vim.cmd[[colorscheme tokyonight-storm]]
--- vim.cmd[[colorscheme tokyonight-moon]]
--- colorscheme tokyonight-moon
--- vim.cmd[[colorscheme tokyonight-storm]]
--- vim.cmd[[colorscheme nightfox]]
--- vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
--- vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]] -- for nvimtree transparant
--- vim.cmd[[hi Normal guibg=NONE]]
-
 local function set_theme()
     local hour = tonumber(os.date("%H"))
 
     if hour >= 7 and hour < 18 then
-        vim.cmd[[colorscheme tokyonight-day]]
+        vim.cmd[[colorscheme tokyonight-night]]
     else
         vim.cmd[[colorscheme tokyonight-night]]
     end
