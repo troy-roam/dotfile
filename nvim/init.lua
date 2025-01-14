@@ -29,13 +29,6 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {},
-    -- },
-
     --- Uncomment the two plugins below if you want to manage the language servers from neovim
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
@@ -52,14 +45,9 @@ require("lazy").setup({
     -- https://github.com/voldikss/vim-floaterm
     { 'voldikss/vim-floaterm' },
     { 'fatih/vim-go' },
-
     -- https://github.com/lewis6991/gitsigns.nvim
     { 'lewis6991/gitsigns.nvim' },
-    {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        dependencies = 'nvim-tree/nvim-web-devicons',
-    },
+
     { 'nvim-lualine/lualine.nvim' },
     { "nvim-treesitter/nvim-treesitter-context" },
     {
@@ -68,10 +56,11 @@ require("lazy").setup({
             -- require('leap').create_default_mappings()
         end,
     },
+    { "yorik1984/newpaper.nvim" },
     {
-        "yorik1984/newpaper.nvim",
-        priority = 1000,
-        config = true,
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
     },
 })
 
@@ -138,26 +127,6 @@ vim.opt.termguicolors      = true
 vim.g.floaterm_width       = 0.7
 vim.g.floaterm_height      = 0.8
 vim.g.floaterm_borderchars = '─│─│╭╮╯╰'
-
----------------------------------------------------------------------
-local function set_theme()
-    local hour = tonumber(os.date("%H"))
-    if hour >= 7 and hour < 18 then
-        -- vim.cmd [[colorscheme tokyonight-day]]
-	    vim.g.newpaper_style = "light"
-    else
-        -- vim.cmd [[colorscheme tokyonight-night]]
-	    vim.g.newpaper_style = "dark"
-    end
-end
-
-set_theme()
-
-local timer = vim.loop.new_timer()
-timer:start(0, 60000, vim.schedule_wrap(function()
-    set_theme()
-end))
----------------------------------------------------------------------
 
 ------------------------------ lsp ----------------------------
 vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end)
