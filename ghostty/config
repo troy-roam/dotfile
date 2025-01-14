@@ -1,6 +1,6 @@
 copy-on-select       = true
 theme                = light:"tokyonight_night",dark:"tokyonight_night"
 font-feature         = -calt
-font-size            = 17
+font-size            = 16
 keybind              = super+control+p=previous_tab
 keybind              = super+control+n=next_tab

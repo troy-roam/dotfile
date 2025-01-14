@@ -29,12 +29,12 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
+    -- },
 
     --- Uncomment the two plugins below if you want to manage the language servers from neovim
     { 'williamboman/mason.nvim' },
@@ -61,7 +61,6 @@ require("lazy").setup({
         dependencies = 'nvim-tree/nvim-web-devicons',
     },
     { 'nvim-lualine/lualine.nvim' },
-    { "EdenEast/nightfox.nvim" },
     { "nvim-treesitter/nvim-treesitter-context" },
     {
         "ggandor/leap.nvim",
@@ -69,7 +68,13 @@ require("lazy").setup({
             -- require('leap').create_default_mappings()
         end,
     },
+    {
+        "yorik1984/newpaper.nvim",
+        priority = 1000,
+        config = true,
+    },
 })
+
 ---------------------------------- lazy end ------------------------------------
 
 -- https://github.com/ellisonleao/gruvbox.nvim
@@ -138,9 +143,11 @@ vim.g.floaterm_borderchars = '─│─│╭╮╯╰'
 local function set_theme()
     local hour = tonumber(os.date("%H"))
     if hour >= 7 and hour < 18 then
-        vim.cmd [[colorscheme tokyonight-night]]
+        -- vim.cmd [[colorscheme tokyonight-day]]
+	    vim.g.newpaper_style = "light"
     else
-        vim.cmd [[colorscheme tokyonight-night]]
+        -- vim.cmd [[colorscheme tokyonight-night]]
+	    vim.g.newpaper_style = "dark"
     end
 end
 
