@@ -1,15 +1,15 @@
-local vim=vim
+local vim = vim
 ---------------------------------- lazy start ------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -18,7 +18,8 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.6',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { "nvim-treesitter/nvim-treesitter" },
@@ -36,15 +37,15 @@ require("lazy").setup({
     },
 
     --- Uncomment the two plugins below if you want to manage the language servers from neovim
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
 
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-    {'neovim/nvim-lspconfig'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/nvim-cmp'},
-    {'hrsh7th/cmp-path'},
-    {'L3MON4D3/LuaSnip'},
+    { 'VonHeikemen/lsp-zero.nvim',              branch = 'v3.x' },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'hrsh7th/cmp-path' },
+    { 'L3MON4D3/LuaSnip' },
     { 'preservim/tagbar' },
     { 'f-person/git-blame.nvim' },
 
@@ -53,12 +54,15 @@ require("lazy").setup({
     { 'fatih/vim-go' },
 
     -- https://github.com/lewis6991/gitsigns.nvim
-    {'lewis6991/gitsigns.nvim' },
-    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
-    {'nvim-lualine/lualine.nvim'},
-    {"EdenEast/nightfox.nvim" },
-    {"nvim-treesitter/nvim-treesitter-context"},
-    -- {"shaunsingh/nord.nvim"},
+    { 'lewis6991/gitsigns.nvim' },
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
+    },
+    { 'nvim-lualine/lualine.nvim' },
+    { "EdenEast/nightfox.nvim" },
+    { "nvim-treesitter/nvim-treesitter-context" },
     {
         "ggandor/leap.nvim",
         config = function()
@@ -66,7 +70,6 @@ require("lazy").setup({
         end,
     },
 })
-
 ---------------------------------- lazy end ------------------------------------
 
 -- https://github.com/ellisonleao/gruvbox.nvim
@@ -101,43 +104,43 @@ vim.keymap.set('n', '<leader>8', ':BufferLineGoToBuffer 8<CR>')
 vim.keymap.set('n', '<leader>9', ':BufferLineGoToBuffer 9<CR>')
 vim.keymap.set('n', '<leader>0', ':BufferLineGoToBuffer -1<CR>')
 
-vim.opt.guicursor     = ""
-vim.opt.expandtab     = true
-vim.opt.tabstop       = 4
-vim.opt.shiftwidth    = 4
-vim.opt.softtabstop   = 4
-vim.opt.hlsearch      = true
-vim.opt.smartcase     = true
-vim.opt.mouse         = "v"
-vim.opt.autoindent    = true
-vim.opt.foldlevel     = 5
-vim.opt.scrolloff     = 10
-vim.opt.lazyredraw    = true
-vim.opt.ttyfast       = true
-vim.opt.cursorline    = true
-vim.opt.sidescroll    = 1
-vim.opt.linebreak     = true
+vim.opt.guicursor          = ""
+vim.opt.expandtab          = true
+vim.opt.tabstop            = 4
+vim.opt.shiftwidth         = 4
+vim.opt.softtabstop        = 4
+vim.opt.hlsearch           = true
+vim.opt.smartcase          = true
+vim.opt.mouse              = "v"
+vim.opt.autoindent         = true
+vim.opt.foldlevel          = 5
+vim.opt.scrolloff          = 10
+vim.opt.lazyredraw         = true
+vim.opt.ttyfast            = true
+vim.opt.cursorline         = true
+vim.opt.sidescroll         = 1
+vim.opt.linebreak          = true
 -- vim.opt.colorcolumn   = "161"
-vim.wo.wrap           = false
-vim.opt.rnu           = false
-vim.opt.nu            = true
-vim.opt.filetype      = "on"
-vim.opt.clipboard     = "unnamedplus"
-vim.opt.conceallevel  = 2
-vim.opt.termguicolors = true
+vim.wo.wrap                = true
+vim.opt.rnu                = false
+vim.opt.nu                 = true
+vim.opt.filetype           = "on"
+vim.opt.clipboard          = "unnamedplus"
+vim.opt.conceallevel       = 2
+vim.opt.termguicolors      = true
 
 -- float_term
-vim.g.floaterm_width        = 0.7
-vim.g.floaterm_height       = 0.8
-vim.g.floaterm_borderchars  = '─│─│╭╮╯╰'
+vim.g.floaterm_width       = 0.7
+vim.g.floaterm_height      = 0.8
+vim.g.floaterm_borderchars = '─│─│╭╮╯╰'
 
+---------------------------------------------------------------------
 local function set_theme()
     local hour = tonumber(os.date("%H"))
-
     if hour >= 7 and hour < 18 then
-        vim.cmd[[colorscheme tokyonight-night]]
+        vim.cmd [[colorscheme tokyonight-night]]
     else
-        vim.cmd[[colorscheme tokyonight-night]]
+        vim.cmd [[colorscheme tokyonight-night]]
     end
 end
 
@@ -147,6 +150,7 @@ local timer = vim.loop.new_timer()
 timer:start(0, 60000, vim.schedule_wrap(function()
     set_theme()
 end))
+---------------------------------------------------------------------
 
 ------------------------------ lsp ----------------------------
 vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end)
@@ -170,6 +174,6 @@ vim.api.nvim_create_autocmd(
     }
 )
 
-vim.keymap.set({'n', 'x', 'o'}, 'f',  '<Plug>(leap-forward-to)')
-vim.keymap.set({'n', 'x', 'o'}, 'F',  '<Plug>(leap-backward-to)')
-vim.keymap.set({'n', 'x', 'o'}, 'gf', '<Plug>(leap-from-window)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'f', '<Plug>(leap-forward-to)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'F', '<Plug>(leap-backward-to)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'gf', '<Plug>(leap-from-window)')
