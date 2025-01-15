@@ -68,12 +68,29 @@ require("lazy").setup({
         version = "*",
         dependencies = 'nvim-tree/nvim-web-devicons',
     },
+    {
+        "f-person/auto-dark-mode.nvim",
+        opts = {
+            update_interval = 1000,
+            set_dark_mode = function()
+                vim.api.nvim_set_option_value("background", "dark", {})
+                vim.cmd("colorscheme tokyonight-night")
+            end,
+            set_light_mode = function()
+                -- vim.api.nvim_set_option_value("background", "light", {})
+                -- vim.cmd("colorscheme tokyonight-day")
+
+                vim.api.nvim_set_option_value("background", "dark", {})
+                vim.cmd("colorscheme tokyonight-night")
+            end,
+        },
+    }
 })
 
 ---------------------------------- lazy end ------------------------------------
 
 -- https://github.com/ellisonleao/gruvbox.nvim
-vim.o.background = "dark" -- "dark" or "light" for light mode
+-- vim.o.background = "dark" -- "dark" or "light" for light mode
 
 vim.cmd('abb idbg fmt.Printf(\"debug: %+v\\n\",')
 vim.cmd('abb ierr if err != nil {')
