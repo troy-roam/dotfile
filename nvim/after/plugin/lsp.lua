@@ -30,6 +30,27 @@ require'lspconfig'.pylsp.setup{
   }
 }
 
+require('lspconfig').lua_ls.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+
 local cmp        = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 

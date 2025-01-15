@@ -56,7 +56,13 @@ require("lazy").setup({
             -- require('leap').create_default_mappings()
         end,
     },
-    { "yorik1984/newpaper.nvim" },
+    -- { "yorik1984/newpaper.nvim" },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
     {
         'akinsho/bufferline.nvim',
         version = "*",

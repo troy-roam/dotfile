@@ -1,15 +1,9 @@
 local function set_theme()
     local hour = tonumber(os.date("%H"))
     if hour >= 7 and hour < 18 then
-        -- vim.cmd [[colorscheme tokyonight-day]]
-        require("newpaper").setup({
-            style = "dark"
-        })
+        vim.cmd [[colorscheme tokyonight-day]]
     else
-        -- vim.cmd [[colorscheme tokyonight-night]]
-        require("newpaper").setup({
-            style = "dark"
-        })
+        vim.cmd [[colorscheme tokyonight-night]]
     end
 end
 
