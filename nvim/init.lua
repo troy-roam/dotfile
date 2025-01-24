@@ -7,7 +7,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        "--branch=stable",
         lazypath,
     })
 end
@@ -19,44 +19,25 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.6',
+        tag = '0.1.8',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { "nvim-treesitter/nvim-treesitter" },
+    { "nvim-treesitter/nvim-treesitter-context" },
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
     },
-    --- Uncomment the two plugins below if you want to manage the language servers from neovim
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-
-    { 'VonHeikemen/lsp-zero.nvim',              branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/nvim-cmp' },
-    { 'hrsh7th/cmp-path' },
-    { 'L3MON4D3/LuaSnip' },
     { 'preservim/tagbar' },
     { 'f-person/git-blame.nvim' },
-
-    -- https://github.com/voldikss/vim-floaterm
     { 'voldikss/vim-floaterm' },
-    { 'fatih/vim-go' },
-    -- https://github.com/lewis6991/gitsigns.nvim
     { 'lewis6991/gitsigns.nvim' },
-
     { 'nvim-lualine/lualine.nvim' },
-    { "nvim-treesitter/nvim-treesitter-context" },
-    {
-        "ggandor/leap.nvim",
-        config = function()
-            -- require('leap').create_default_mappings()
-        end,
-    },
-    -- { "yorik1984/newpaper.nvim" },
+    { 'echasnovski/mini.completion', version = '*' },
+    { "ggandor/leap.nvim" },
     {
         "folke/tokyonight.nvim",
         lazy = false,
@@ -77,21 +58,20 @@ require("lazy").setup({
                 vim.cmd("colorscheme tokyonight-night")
             end,
             set_light_mode = function()
-                -- vim.api.nvim_set_option_value("background", "light", {})
-                -- vim.cmd("colorscheme tokyonight-day")
-
-                vim.api.nvim_set_option_value("background", "dark", {})
-                vim.cmd("colorscheme tokyonight-night")
+                vim.api.nvim_set_option_value("background", "light", {})
+                vim.cmd("colorscheme tokyonight-day")
+                -- vim.api.nvim_set_option_value("background", "dark", {})
+                -- vim.cmd("colorscheme tokyonight-night")
             end,
         },
     },
     {
         "nvim-neorg/neorg",
         build = ":Neorg sync-parsers",
-        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-        version = "*", -- Pin Neorg to the latest stable release
+        lazy = false,
+        version = "*",
         dependencies = {
-	    "vhyrro/luarocks.nvim",
+            "vhyrro/luarocks.nvim",
             "nvim-lua/plenary.nvim",
         }
     }
@@ -161,28 +141,7 @@ vim.g.floaterm_width       = 0.7
 vim.g.floaterm_height      = 0.8
 vim.g.floaterm_borderchars = '─│─│╭╮╯╰'
 
------------------------------- lsp ----------------------------
-vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end)
-vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.references() end)
-vim.keymap.set("n", "<leader>k", function() vim.lsp.buf.hover() end)
-vim.api.nvim_set_keymap('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
-
--- https://stackoverflow.com/questions/77466697/how-to-automatically-format-on-save
-vim.api.nvim_create_augroup("AutoFormat", {})
-vim.api.nvim_create_autocmd(
-    "BufWritePost",
-    {
-        pattern = "*.py",
-        group = "AutoFormat",
-        callback = function()
-            vim.cmd("silent !black --quiet %")
-            vim.cmd("edit")
-        end,
-    }
-)
-
+-- leap
 vim.keymap.set({ 'n', 'x', 'o' }, 'f', '<Plug>(leap-forward-to)')
 vim.keymap.set({ 'n', 'x', 'o' }, 'F', '<Plug>(leap-backward-to)')
 vim.keymap.set({ 'n', 'x', 'o' }, 'gf', '<Plug>(leap-from-window)')
