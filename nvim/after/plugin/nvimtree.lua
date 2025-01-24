@@ -5,22 +5,7 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup({
     sort_by = "case_sensitive",
     view = {
-        float = {
-            enable = false,
-            quit_on_focus_loss = true,
-            open_win_config = {
-                relative = "editor",
-                -- relative = "cursor",
-                -- width = 30,
-                -- height = 30,
-                row = 1,
-                col = 1,
-                -- border = "shadow",
-                border = "rounded",
-                style = "minimal",
-            },
-        },
-        adaptive_size = true,
+        adaptive_size = false,
     },
     renderer = {
         group_empty = false,
