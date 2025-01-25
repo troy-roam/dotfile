@@ -1,6 +1,14 @@
 copy-on-select       = true
 theme                = light:"tokyonight-day",dark:"tokyonight_night"
 font-feature         = -calt
-font-size            = 16
+font-size            = 15
 keybind              = super+control+p=previous_tab
 keybind              = super+control+n=next_tab
+
+keybind                           = global:control+`=toggle_quick_terminal
+quick-terminal-position           = top
+quick-terminal-screen             = mouse
+quick-terminal-animation-duration = 0
+quick-terminal-autohide           = true
+
+macos-titlebar-style = transparent

@@ -74,7 +74,16 @@ require("lazy").setup({
             "vhyrro/luarocks.nvim",
             "nvim-lua/plenary.nvim",
         }
-    }
+    },
+    {
+        "folke/zen-mode.nvim",
+        opts = {
+            window = {
+                backdrop = 1,
+                width = 80,
+            }
+        }
+    },
 })
 
 ---------------------------------- lazy end ------------------------------------
@@ -145,3 +154,5 @@ vim.g.floaterm_borderchars = '─│─│╭╮╯╰'
 vim.keymap.set({ 'n', 'x', 'o' }, 'f', '<Plug>(leap-forward-to)')
 vim.keymap.set({ 'n', 'x', 'o' }, 'F', '<Plug>(leap-backward-to)')
 vim.keymap.set({ 'n', 'x', 'o' }, 'gf', '<Plug>(leap-from-window)')
+
+vim.api.nvim_set_keymap('i', '/', '/<C-x><C-f>', {noremap = true, silent = true})
