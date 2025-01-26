@@ -9,13 +9,13 @@ require("bufferline").setup{
         name_formatter = function(buf)
             return buf.tabnr .. ". " .. buf.name
         end,
-        custom_areas = {
-            right = function()
-                local result = {}
-                local current_file = vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
-                table.insert(result, {text = current_file})
-                return result
-            end,
-        },
+        -- custom_areas = {
+        --     right = function()
+        --         local result = {}
+        --         local current_file = vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
+        --         table.insert(result, {text = current_file})
+        --         return result
+        --     end,
+        -- },
     }
 }

@@ -120,6 +120,7 @@ vim.keymap.set('n', '<leader>8', ':BufferLineGoToBuffer 8<CR>')
 vim.keymap.set('n', '<leader>9', ':BufferLineGoToBuffer 9<CR>')
 vim.keymap.set('n', '<leader>0', ':BufferLineGoToBuffer -1<CR>')
 
+vim.o.winbar               = "%f"
 vim.opt.guicursor          = ""
 vim.opt.expandtab          = true
 vim.opt.tabstop            = 4
