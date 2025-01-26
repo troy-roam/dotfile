@@ -129,7 +129,13 @@ vim.opt.hlsearch           = true
 vim.opt.smartcase          = true
 vim.opt.mouse              = "v"
 vim.opt.autoindent         = true
-vim.opt.foldlevel          = 5
+
+-- fold
+-- vim.opt.foldmethod         = "indent"
+vim.opt.foldmethod         = "expr"
+vim.opt.foldexpr           = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel          = 10
+
 vim.opt.scrolloff          = 10
 vim.opt.lazyredraw         = true
 vim.opt.ttyfast            = true
@@ -138,7 +144,7 @@ vim.opt.sidescroll         = 1
 vim.opt.linebreak          = true
 -- vim.opt.colorcolumn   = "161"
 vim.wo.wrap                = true
-vim.opt.rnu                = false
+vim.opt.rnu                = true
 vim.opt.nu                 = true
 vim.opt.filetype           = "on"
 vim.opt.clipboard          = "unnamedplus"
