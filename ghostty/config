@@ -1,5 +1,5 @@
-copy-on-select       = true
-theme                = light:"tokyonight-day",dark:"tokyonight_night"
+copy-on-select       = clipboard
+theme                = light:"tokyonight_night",dark:"tokyonight_night"
 font-feature         = -calt
 font-size            = 15
 keybind              = super+control+p=previous_tab

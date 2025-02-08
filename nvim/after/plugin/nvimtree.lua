@@ -5,7 +5,10 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup({
     sort_by = "case_sensitive",
     view = {
-        adaptive_size = false,
+        adaptive_size = true,
+        float = {
+            enable = true,
+        }
     },
     renderer = {
         group_empty = false,

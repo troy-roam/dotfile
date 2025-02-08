@@ -5,10 +5,13 @@ require('lspconfig').gopls.setup({
         gopls = {
             gofumpt = true,
             staticcheck = true,
+            -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md#diagnosticsdelay-timeduration
+            diagnosticsDelay = "3s",
+            completionBudget = "1s",
+            -- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
             analyses = {
                 unusedparams = true,
             },
-            completionBudget = "1s",
         },
     },
     on_attach = function(client, bufnr)

@@ -58,10 +58,10 @@ require("lazy").setup({
                 vim.cmd("colorscheme tokyonight-night")
             end,
             set_light_mode = function()
-                vim.api.nvim_set_option_value("background", "light", {})
-                vim.cmd("colorscheme tokyonight-day")
-                -- vim.api.nvim_set_option_value("background", "dark", {})
-                -- vim.cmd("colorscheme tokyonight-night")
+                -- vim.api.nvim_set_option_value("background", "light", {})
+                -- vim.cmd("colorscheme tokyonight-day")
+                vim.api.nvim_set_option_value("background", "dark", {})
+                vim.cmd("colorscheme tokyonight-night")
             end,
         },
     },
@@ -120,7 +120,7 @@ vim.keymap.set('n', '<leader>8', ':BufferLineGoToBuffer 8<CR>')
 vim.keymap.set('n', '<leader>9', ':BufferLineGoToBuffer 9<CR>')
 vim.keymap.set('n', '<leader>0', ':BufferLineGoToBuffer -1<CR>')
 
-vim.o.winbar               = "%f"
+vim.o.winbar               = "%=%f"
 vim.opt.guicursor          = ""
 vim.opt.expandtab          = true
 vim.opt.tabstop            = 4
@@ -158,8 +158,8 @@ vim.g.floaterm_height      = 0.8
 vim.g.floaterm_borderchars = '─│─│╭╮╯╰'
 
 -- leap
-vim.keymap.set({ 'n', 'x', 'o' }, 'f', '<Plug>(leap-forward-to)')
-vim.keymap.set({ 'n', 'x', 'o' }, 'F', '<Plug>(leap-backward-to)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'f',  '<Plug>(leap-forward-to)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'F',  '<Plug>(leap-backward-to)')
 vim.keymap.set({ 'n', 'x', 'o' }, 'gf', '<Plug>(leap-from-window)')
 
 vim.api.nvim_set_keymap('i', '/', '/<C-x><C-f>', {noremap = true, silent = true})
