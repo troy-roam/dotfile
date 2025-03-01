@@ -1,14 +1,10 @@
 copy-on-select       = clipboard
 theme                = light:"tokyonight_night",dark:"tokyonight_night"
+theme                = light:"Kanagawa Dragon",dark:"Kanagawa Dragon"
 font-feature         = -calt
-font-size            = 15
+font-size            = 16
 keybind              = super+control+p=previous_tab
 keybind              = super+control+n=next_tab
-
-keybind                           = global:control+`=toggle_quick_terminal
-quick-terminal-position           = top
-quick-terminal-screen             = mouse
-quick-terminal-animation-duration = 0
-quick-terminal-autohide           = true
-
 macos-titlebar-style = transparent
+title                = " "
+macos-window-shadow  = true

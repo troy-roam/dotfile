@@ -50,18 +50,27 @@ require("lazy").setup({
         dependencies = 'nvim-tree/nvim-web-devicons',
     },
     {
+        -- https://github.com/rebelot/kanagawa.nvim
+        "rebelot/kanagawa.nvim",
+    },
+    {
+        -- vim.cmd("colorscheme kanagawa-wave")
+        -- vim.cmd("colorscheme kanagawa-dragon")
+        -- vim.cmd("colorscheme kanagawa-lotus")
         "f-person/auto-dark-mode.nvim",
         opts = {
             update_interval = 1000,
             set_dark_mode = function()
                 vim.api.nvim_set_option_value("background", "dark", {})
-                vim.cmd("colorscheme tokyonight-night")
+                -- vim.cmd("colorscheme tokyonight-night")
+                vim.cmd("colorscheme kanagawa-dragon")
             end,
             set_light_mode = function()
                 -- vim.api.nvim_set_option_value("background", "light", {})
                 -- vim.cmd("colorscheme tokyonight-day")
                 vim.api.nvim_set_option_value("background", "dark", {})
-                vim.cmd("colorscheme tokyonight-night")
+                -- vim.cmd("colorscheme tokyonight-night")
+                vim.cmd("colorscheme kanagawa-dragon")
             end,
         },
     },

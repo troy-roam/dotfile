@@ -6,8 +6,14 @@ require("nvim-tree").setup({
     sort_by = "case_sensitive",
     view = {
         adaptive_size = true,
+        width = {
+            max = 200,
+        },
         float = {
-            enable = true,
+            enable = false,
+            open_win_config = {
+                height = 45,
+            },
         }
     },
     renderer = {
@@ -15,31 +21,14 @@ require("nvim-tree").setup({
         indent_width = 2,
         highlight_opened_files = "all",
         indent_markers = {
-            enable = true,
+            enable = false,
             inline_arrows = true,
         },
         icons = {
             show = {
-            --     file = false,
-            --     folder = false,
-            --     folder_arrow = true,
                 git = false,
             },
-            -- glyphs = {
-            --     folder = {
-            --         arrow_closed = "⏵",
-            --         arrow_open = "⏷",
-            --     },
-            --     git = {
-            --         unstaged = "✗",
-            --         staged = "✓",
-            --         unmerged = "⌥",
-            --         renamed = "➜",
-            --         untracked = "★",
-            --         deleted = "⊖",
-            --         ignored = "◌",
-            --     },
-            -- },
+ 
         },
     },
     update_focused_file = {
