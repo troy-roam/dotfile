@@ -19,7 +19,6 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { "nvim-treesitter/nvim-treesitter" },
@@ -106,6 +105,12 @@ require("lazy").setup({
         opts = {
             -- configuration goes here
         },
+    },
+    -- https://github.com/junegunn/fzf.vim
+    {
+        "junegunn/fzf.vim",
+        dependencies = { "junegunn/fzf" },
+        event = "VeryLazy"
     }
 })
 
