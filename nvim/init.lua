@@ -61,15 +61,15 @@ require("lazy").setup({
             update_interval = 1000,
             set_dark_mode = function()
                 vim.api.nvim_set_option_value("background", "dark", {})
-                -- vim.cmd("colorscheme tokyonight-night")
-                vim.cmd("colorscheme kanagawa-dragon")
+                vim.cmd("colorscheme tokyonight-night")
+                -- vim.cmd("colorscheme kanagawa-dragon")
             end,
             set_light_mode = function()
+                vim.api.nvim_set_option_value("background", "light", {})
+                vim.cmd("colorscheme tokyonight-day")
                 -- vim.api.nvim_set_option_value("background", "light", {})
-                -- vim.cmd("colorscheme tokyonight-day")
-                vim.api.nvim_set_option_value("background", "dark", {})
                 -- vim.cmd("colorscheme tokyonight-night")
-                vim.cmd("colorscheme kanagawa-dragon")
+                -- vim.cmd("colorscheme kanagawa-lotus")
             end,
         },
     },
@@ -113,6 +113,12 @@ require("lazy").setup({
         event = "VeryLazy"
     }
 })
+
+vim.g.fzf_layout = { down = '60%' } 
+
+vim.api.nvim_set_keymap("n", "<Leader>f", ":Ag<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>F", ":Files<CR>", { noremap = true, silent = true })
+
 
 ---------------------------------- lazy end ------------------------------------
 

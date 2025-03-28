@@ -198,14 +198,6 @@
                         "vendor_id": 1452
                     },
                     "ignore": false
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 53297,
-                        "vendor_id": 13364
-                    },
-                    "ignore": false
                 }
             ],
             "fn_function_keys": [
@@ -220,10 +212,6 @@
                 {
                     "from": { "key_code": "caps_lock" },
                     "to": [{ "key_code": "left_control" }]
-                },
-                {
-                    "from": { "pointing_button": "button5" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
                 }
             ],
             "virtual_hid_keyboard": {
