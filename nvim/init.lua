@@ -53,35 +53,23 @@ require("lazy").setup({
         "rebelot/kanagawa.nvim",
     },
     {
-        -- vim.cmd("colorscheme kanagawa-wave")
-        -- vim.cmd("colorscheme kanagawa-dragon")
-        -- vim.cmd("colorscheme kanagawa-lotus")
         "f-person/auto-dark-mode.nvim",
         opts = {
             update_interval = 1000,
             set_dark_mode = function()
                 vim.api.nvim_set_option_value("background", "dark", {})
                 vim.cmd("colorscheme tokyonight-night")
-                -- vim.cmd("colorscheme kanagawa-dragon")
+                vim.cmd("colorscheme kanagawa-dragon")
             end,
             set_light_mode = function()
-                vim.api.nvim_set_option_value("background", "light", {})
+                vim.api.nvim_set_option_value("background", "dark", {})
                 vim.cmd("colorscheme tokyonight-day")
+                vim.cmd("colorscheme kanagawa-dragon")
                 -- vim.api.nvim_set_option_value("background", "light", {})
                 -- vim.cmd("colorscheme tokyonight-night")
                 -- vim.cmd("colorscheme kanagawa-lotus")
             end,
         },
-    },
-    {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        lazy = false,
-        version = "*",
-        dependencies = {
-            "vhyrro/luarocks.nvim",
-            "nvim-lua/plenary.nvim",
-        }
     },
     {
         "folke/zen-mode.nvim",
