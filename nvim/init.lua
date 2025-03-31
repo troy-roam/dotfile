@@ -152,6 +152,10 @@ vim.opt.hlsearch           = true
 vim.opt.smartcase          = true
 vim.opt.mouse              = "v"
 vim.opt.autoindent         = true
+vim.opt.spell              = true
+vim.opt.spelllang          = "en_us"
+vim.opt.spellfile          = vim.fn.expand("~/.config/nvim/spell/custom.utf-8.add")
+
 
 -- fold
 -- vim.opt.foldmethod         = "indent"
