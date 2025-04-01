@@ -6,22 +6,13 @@ require("nvim-tree").setup({
     sort_by = "case_sensitive",
     view = {
         adaptive_size = false,
-        width = {
-            max = 200,
-        },
-        float = {
-            enable = false,
-            open_win_config = {
-                height = 45,
-            },
-        }
+        width         = 40,
     },
     renderer = {
-        group_empty = false,
+        group_empty  = false,
         indent_width = 2,
-        highlight_opened_files = "all",
         indent_markers = {
-            enable = false,
+            enable        = false,
             inline_arrows = true,
         },
         icons = {
@@ -41,3 +32,9 @@ require("nvim-tree").setup({
 
 vim.keymap.set("n", "<leader><tab>", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<leader>c", vim.cmd.NvimTreeFindFile)
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("NvimTreeToggle")
+  end
+})
