@@ -22,7 +22,7 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { "nvim-treesitter/nvim-treesitter" },
-    { "nvim-treesitter/nvim-treesitter-context" },
+    -- { "nvim-treesitter/nvim-treesitter-context" },
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = {
