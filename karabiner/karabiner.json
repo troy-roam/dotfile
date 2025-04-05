@@ -8,6 +8,39 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "key_code": "7",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Ghostty.app" } } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "8",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Google Chrome.app" } } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "9",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Sublime Text.app" } } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": ["left_control"],
@@ -206,6 +239,14 @@
                         "vendor_id": 13364
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 835,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true
                 }
             ],
             "fn_function_keys": [

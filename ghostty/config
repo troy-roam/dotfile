@@ -1,10 +1,10 @@
 copy-on-select       = clipboard
-theme                = light:"tokyonight-day",dark:"tokyonight_night"
+# theme                = light:"tokyonight-day",dark:"tokyonight_night"
 # theme                = light:"Monokai Pro Light Sun",dark:"Kanagawa Dragon"
 theme                = light:"Kanagawa Dragon",dark:"Kanagawa Dragon"
 font-feature         = -calt
 font-size            = 17
 keybind              = super+control+f=write_scrollback_file:open
 macos-titlebar-style = transparent
-title                = " "
+# title                = "<<<<<>>>>>"
 macos-window-shadow  = true
