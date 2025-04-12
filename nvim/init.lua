@@ -60,14 +60,16 @@ require("lazy").setup({
         opts = {
             update_interval = 1000,
             set_dark_mode = function()
-                vim.api.nvim_set_option_value("background", "dark", {})
-                vim.cmd("colorscheme tokyonight-night")
-                vim.cmd("colorscheme kanagawa-dragon")
+                -- vim.api.nvim_set_option_value("background", "dark", {})
+                -- vm.cmd("colorscheme tokyonight-night")
+                -- vim.cmd("colorscheme kanagawa-dragon")
+                vim.cmd("colorscheme Tomorrow-Night-Blue")
             end,
             set_light_mode = function()
-                vim.api.nvim_set_option_value("background", "dark", {})
-                vim.cmd("colorscheme tokyonight-day")
-                vim.cmd("colorscheme kanagawa-dragon")
+                -- vim.api.nvim_set_option_value("background", "dark", {})
+                -- vim.cmd("colorscheme tokyonight-day")
+                -- vim.cmd("colorscheme kanagawa-dragon")
+                vim.cmd("colorscheme Tomorrow-Night-Blue")
                 -- vim.api.nvim_set_option_value("background", "light", {})
                 -- vim.cmd("colorscheme tokyonight-night")
                 -- vim.cmd("colorscheme kanagawa-lotus")
