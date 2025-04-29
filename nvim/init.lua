@@ -62,16 +62,13 @@ require("lazy").setup({
             set_dark_mode = function()
                 -- vim.api.nvim_set_option_value("background", "dark", {})
                 -- vm.cmd("colorscheme tokyonight-night")
-                -- vim.cmd("colorscheme kanagawa-dragon")
-                vim.cmd("colorscheme Tomorrow-Night-Blue")
+                vim.cmd("colorscheme kanagawa-dragon")
             end,
             set_light_mode = function()
-                -- vim.api.nvim_set_option_value("background", "dark", {})
-                -- vim.cmd("colorscheme tokyonight-day")
-                -- vim.cmd("colorscheme kanagawa-dragon")
-                vim.cmd("colorscheme Tomorrow-Night-Blue")
                 -- vim.api.nvim_set_option_value("background", "light", {})
                 -- vim.cmd("colorscheme tokyonight-night")
+                -- vim.cmd("colorscheme tokyonight-day")
+                vim.cmd("colorscheme kanagawa-dragon")
                 -- vim.cmd("colorscheme kanagawa-lotus")
             end,
         },
@@ -157,7 +154,7 @@ vim.opt.hlsearch           = true
 vim.opt.smartcase          = true
 vim.opt.mouse              = "v"
 vim.opt.autoindent         = true
-vim.opt.spell              = true
+vim.opt.spell              = false
 vim.opt.spelllang          = "en_us"
 vim.opt.spellfile          = vim.fn.expand("~/.config/nvim/spell/custom.utf-8.add")
 
