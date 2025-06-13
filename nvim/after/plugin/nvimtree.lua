@@ -26,7 +26,7 @@ require("nvim-tree").setup({
         },
     },
     update_focused_file = {
-        enable = true,
+        enable = false,
     },
     filters = {
         dotfiles = false,
@@ -36,8 +36,8 @@ require("nvim-tree").setup({
 vim.keymap.set("n", "<leader><tab>", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<leader>c", vim.cmd.NvimTreeFindFile)
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.cmd("NvimTreeToggle")
-  end
-})
+# vim.api.nvim_create_autocmd("VimEnter", {
+#   callback = function()
+#     vim.cmd("NvimTreeToggle")
+#   end
+# })
