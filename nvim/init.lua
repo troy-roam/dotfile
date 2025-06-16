@@ -32,7 +32,8 @@ require("lazy").setup({
     { 'neovim/nvim-lspconfig' },
     { 'preservim/tagbar' },
     { 'f-person/git-blame.nvim' },
-    { 'voldikss/vim-floaterm' },
+    -- { 'voldikss/vim-floaterm' },
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
     { 'lewis6991/gitsigns.nvim' },
     { 'nvim-lualine/lualine.nvim' },
     { 'echasnovski/mini.completion', version = '*' },
@@ -131,7 +132,7 @@ vim.keymap.set('n', '<leader>l', '<C-w>l')
 vim.keymap.set('n', '<leader>n', 'gt')
 vim.keymap.set('n', '<leader>N', 'gT')
 vim.keymap.set("n", "<leader>e", vim.cmd.TagbarToggle)
-vim.keymap.set('n', '<C-n>', vim.cmd.FloatermToggle)
+-- vim.keymap.set('n', '<C-n>', vim.cmd.FloatermToggle)
 
 vim.keymap.set('n', '<leader>1', ':BufferLineGoToBuffer 1<CR>')
 vim.keymap.set('n', '<leader>2', ':BufferLineGoToBuffer 2<CR>')
