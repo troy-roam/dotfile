@@ -1,4 +1,5 @@
 {
+    "global": { "unsafe_ui": true },
     "profiles": [
         {
             "complex_modifications": {
@@ -111,6 +112,7 @@
             },
             "devices": [
                 {
+                    "disable_built_in_keyboard_if_exists": true,
                     "identifiers": {
                         "is_keyboard": true,
                         "product_id": 668,
@@ -121,8 +123,7 @@
                             "from": { "key_code": "caps_lock" },
                             "to": [{ "key_code": "left_control" }]
                         }
-                    ],
-                    "treat_as_built_in_keyboard": true
+                    ]
                 },
                 {
                     "identifiers": {
@@ -239,6 +240,14 @@
                         "vendor_id": 13364
                     },
                     "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": true,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 53297,
+                        "vendor_id": 13364
+                    }
                 }
             ],
             "fn_function_keys": [
