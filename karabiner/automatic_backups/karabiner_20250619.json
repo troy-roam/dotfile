@@ -240,6 +240,14 @@
                         "vendor_id": 13364
                     },
                     "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": true,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 53297,
+                        "vendor_id": 13364
+                    }
                 }
             ],
             "fn_function_keys": [

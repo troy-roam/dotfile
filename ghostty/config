@@ -3,7 +3,7 @@ copy-on-select       = clipboard
 # theme                = light:"Monokai Pro Light Sun",dark:"Kanagawa Dragon"
 theme                = light:"Kanagawa Dragon",dark:"Kanagawa Dragon"
 font-feature         = -calt
-font-size            = 15
+font-size            = 16
 keybind              = super+control+f=write_scrollback_file:open
 macos-titlebar-style = transparent
 macos-window-shadow  = true
