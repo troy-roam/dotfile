@@ -7,5 +7,4 @@ font-size            = 15
 keybind              = super+control+f=write_scrollback_file:open
 macos-titlebar-style = transparent
 macos-window-shadow  = true
-font-family          = "JetBrainsMono Nerd Font SemiBold"
 font-family          = "JetBrains Mono SemiBold"
