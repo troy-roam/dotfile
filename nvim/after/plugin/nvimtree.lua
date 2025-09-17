@@ -53,7 +53,7 @@ require("nvim-tree").setup({
         },
     },
     update_focused_file = {
-        enable = false,
+        enable = true,
     },
     filters = {
         dotfiles = false,

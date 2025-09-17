@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+
 require("lazy").setup({
     {
         'nvim-telescope/telescope.nvim',
@@ -52,28 +53,7 @@ require("lazy").setup({
             -- configs...
         end,
     },
-    {
-        -- https://github.com/rebelot/kanagawa.nvim
-        "rebelot/kanagawa.nvim",
-    },
-    {
-        "f-person/auto-dark-mode.nvim",
-        opts = {
-            update_interval = 1000,
-            set_dark_mode = function()
-                -- vim.api.nvim_set_option_value("background", "dark", {})
-                -- vm.cmd("colorscheme tokyonight-night")
-                vim.cmd("colorscheme kanagawa-dragon")
-            end,
-            set_light_mode = function()
-                -- vim.api.nvim_set_option_value("background", "light", {})
-                -- vim.cmd("colorscheme tokyonight-night")
-                -- vim.cmd("colorscheme tokyonight-day")
-                vim.cmd("colorscheme kanagawa-dragon")
-                -- vim.cmd("colorscheme kanagawa-lotus")
-            end,
-        },
-    },
+    { "rebelot/kanagawa.nvim" },
     {
         "folke/zen-mode.nvim",
         opts = {
@@ -192,3 +172,8 @@ vim.keymap.set({ 'n', 'x', 'o' }, 'F',  '<Plug>(leap-backward-to)')
 vim.keymap.set({ 'n', 'x', 'o' }, 'gf', '<Plug>(leap-from-window)')
 
 vim.api.nvim_set_keymap('i', '/', '/<C-x><C-f>', {noremap = true, silent = true})
+
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
