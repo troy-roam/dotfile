@@ -5,5 +5,5 @@ font-size            = 15
 macos-titlebar-style = transparent
 macos-window-shadow  = true
 font-family          = "JetBrains Mono SemiBold"
-background-opacity   = 0.95
+background-opacity   = 0.9
 background-blur      = 1
