@@ -1,7 +1,7 @@
 copy-on-select       = clipboard
 theme                = light:"Kanagawa Dragon",dark:"Kanagawa Dragon"
 font-feature         = -calt
-font-size            = 13
+font-size            = 15
 macos-titlebar-style = transparent
 macos-window-shadow  = true
 font-family          = "JetBrains Mono SemiBold"
@@ -12,3 +12,4 @@ keybind              = cmd+shift+h=goto_split:left
 keybind              = cmd+shift+j=goto_split:bottom
 keybind              = cmd+shift+k=goto_split:top
 keybind              = cmd+shift+l=goto_split:right
+macos-titlebar-style = tabs
