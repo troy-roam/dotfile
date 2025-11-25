@@ -4,7 +4,7 @@ font-feature         = -calt
 font-size            = 15
 macos-titlebar-style = transparent
 macos-window-shadow  = true
-font-family          = "JetBrains Mono SemiBold"
+# font-family          = "JetBrains Mono SemiBold"
 background-opacity   = 1
 background-blur      = 1
 
@@ -12,4 +12,4 @@ keybind              = cmd+shift+h=goto_split:left
 keybind              = cmd+shift+j=goto_split:bottom
 keybind              = cmd+shift+k=goto_split:top
 keybind              = cmd+shift+l=goto_split:right
-macos-titlebar-style = transparent
+macos-titlebar-style = tabs
