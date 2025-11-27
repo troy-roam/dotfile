@@ -3,15 +3,17 @@
 -- ==============================
 local border = "double" -- "rounded", "single", "double", "shadow", "none"
 
--- Floating window borders for hover/signature
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover,
-  { border = border }
-)
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  { border = border }
-)
+-- Use bordered floating windows for hover/signature help no matter who calls them.
+local function wrap_with_border(fn)
+  return function(opts)
+    opts = opts or {}
+    opts.border = opts.border or border
+    return fn(opts)
+  end
+end
+
+vim.lsp.buf.hover = wrap_with_border(vim.lsp.buf.hover)
+vim.lsp.buf.signature_help = wrap_with_border(vim.lsp.buf.signature_help)
 
 -- Diagnostic window style
 vim.diagnostic.config({
