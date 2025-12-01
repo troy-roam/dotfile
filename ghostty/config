@@ -1,11 +1,12 @@
 copy-on-select       = clipboard
 theme                = light:"Kanagawa Dragon",dark:"Kanagawa Dragon"
 font-feature         = -calt
-font-size            = 15
+font-size            = 16
 macos-titlebar-style = transparent
 macos-window-shadow  = true
 # font-family          = "JetBrains Mono SemiBold"
-background-opacity   = 1
+font-family          = "Pragmasevka Nerd Font"
+background-opacity   = 0.95
 background-blur      = 1
 
 keybind              = cmd+shift+h=goto_split:left
