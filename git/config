@@ -1,0 +1,28 @@
+[user]
+    name = Troy
+    email = yangtao.678@bytedance.com
+
+[url "ssh://yangtao.678@git.byted.org:29418"]
+    insteadOf = https://git.byted.org
+[url "ssh://yangtao.678@git.byted.org:29418"]
+    insteadOf = https://review.byted.org
+[url "git@code.byted.org:"]
+    insteadOf = https://code.byted.org/
+
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    df = diff
+    pl = pull
+# [core]
+#     pager = delta
+# [interactive]
+#     diffFilter = delta --color-only
+# [delta]
+#     navigate = true  # use n and N to move between diff sections
+#     # dark     = true  # or light = true, or omit for auto-detection
+#     side-by-side = false
+# [merge]
+#     conflictstyle = zdiff3

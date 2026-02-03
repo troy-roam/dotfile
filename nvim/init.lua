@@ -22,8 +22,8 @@ require("lazy").setup({
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    -- { "nvim-treesitter/nvim-treesitter" },
-    -- { "nvim-treesitter/nvim-treesitter-context" },
+    { "nvim-treesitter/nvim-treesitter" },
+    { "nvim-treesitter/nvim-treesitter-context" },
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = {
@@ -190,3 +190,5 @@ vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
+
+vim.cmd("colorscheme kanagawa")
