@@ -118,6 +118,10 @@ prime_nvim() {
   log "running Lazy sync in headless Neovim"
   nvim --headless "+Lazy! sync" +qa
 
+  # Install a baseline parser set so Tree-sitter works immediately after bootstrap.
+  log "installing treesitter parsers in headless Neovim"
+  nvim --headless "+TSInstallSync lua vim vimdoc query go" +qa
+
   log "running treesitter update in headless Neovim"
   nvim --headless "+TSUpdateSync" +qa
 }

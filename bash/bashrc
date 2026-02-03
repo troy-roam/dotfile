@@ -1,0 +1,46 @@
+export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
+
+# ----- colors -----
+c_reset='\[\e[0m\]'
+c_red='\[\e[31m\]'
+c_green='\[\e[32m\]'
+c_yellow='\[\e[33m\]'
+c_blue='\[\e[34m\]'
+c_gray='\[\e[90m\]'
+
+# ----- git branch (fast) -----
+git_branch() {
+    git symbolic-ref --short HEAD 2>/dev/null
+}
+
+# ----- prompt command -----
+__prompt_command() {
+    local exit_code=$?
+
+    # exit code indicator
+    local status=""
+    if [[ $exit_code -ne 0 ]]; then
+        status="${c_red}✘${exit_code}${c_reset} "
+    fi
+
+    # cwd
+    local cwd="${c_blue}\w${c_reset}"
+
+    # git
+    local branch
+    branch=$(git_branch)
+    if [[ -n "$branch" ]]; then
+        branch=" ${c_yellow} ${branch}${c_reset}"
+    fi
+
+    # ssh host only if remote
+    local host=""
+    if [[ -n "$SSH_CONNECTION" ]]; then
+        host="${c_gray}\h ${c_reset}"
+    fi
+
+    PS1="${status}${host}${cwd}${branch}\n${c_green}❯ ${c_reset}"
+}
+
+PROMPT_COMMAND=__prompt_command
+
