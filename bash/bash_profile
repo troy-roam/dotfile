@@ -1,4 +1,5 @@
 export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # ----- colors -----
 c_reset='\[\e[0m\]'
