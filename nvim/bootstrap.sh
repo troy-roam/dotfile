@@ -118,12 +118,18 @@ prime_nvim() {
   log "running Lazy sync in headless Neovim"
   nvim --headless "+Lazy! sync" +qa
 
-  # Install a baseline parser set so Tree-sitter works immediately after bootstrap.
-  log "installing treesitter parsers in headless Neovim"
-  nvim --headless "+TSInstallSync lua vim vimdoc query go" +qa
+  if ! has tree-sitter; then
+    log "tree-sitter CLI not found in PATH; skipping parser install/update"
+    log "install tree-sitter-cli and ensure its bin dir is in PATH, then run :TSUpdate"
+    return
+  fi
 
-  log "running treesitter update in headless Neovim"
-  nvim --headless "+TSUpdateSync" +qa
+  # nvim-treesitter (new API) installs parsers via Lua API + wait().
+  log "installing baseline treesitter parsers in headless Neovim"
+  nvim --headless "+lua require('nvim-treesitter').install({'lua','vim','vimdoc','query','go'}):wait(300000)" +qa
+
+  log "updating installed treesitter parsers in headless Neovim"
+  nvim --headless "+lua require('nvim-treesitter').update():wait(300000)" +qa
 }
 
 main() {
@@ -145,7 +151,7 @@ main() {
     fd \
     fzf \
     the_silver_searcher \
-    tree-sitter \
+    tree-sitter-cli \
     gcc \
     node \
     go \

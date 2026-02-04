@@ -22,7 +22,7 @@ require("lazy").setup({
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { "nvim-treesitter/nvim-treesitter" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", lazy = false },
     { "nvim-treesitter/nvim-treesitter-context" },
     {
         'nvim-tree/nvim-tree.lua',
@@ -156,7 +156,7 @@ vim.opt.spellfile          = vim.fn.expand("~/.config/nvim/spell/custom.utf-8.ad
 -- fold
 -- vim.opt.foldmethod         = "indent"
 vim.opt.foldmethod         = "expr"
-vim.opt.foldexpr           = "nvim_treesitter#foldexpr()"
+vim.opt.foldexpr           = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel          = 10
 
 vim.opt.scrolloff          = 10
