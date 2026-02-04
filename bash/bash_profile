@@ -47,14 +47,19 @@ __prompt_command() {
         branch=" ${c_yellow} ${branch}${c_reset}"
     fi
 
+    # python venv (if active)
+    local venv=""
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        venv=" ${c_green}(${VIRTUAL_ENV##*/})${c_reset}"
+    fi
+
     # ssh host only if remote
     local host=""
     if [[ -n "$SSH_CONNECTION" ]]; then
         host="${c_gray}\h ${c_reset}"
     fi
 
-    PS1="${status}${host}${cwd}${branch}\n${c_green}❯ ${c_reset}"
+    PS1="${status}${host}${cwd}${branch}${venv}\n${c_green}❯ ${c_reset}"
 }
 
 PROMPT_COMMAND=__prompt_command
-
