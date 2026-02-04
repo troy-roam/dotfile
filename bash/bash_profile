@@ -3,6 +3,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 alias ll='ls -alF'
 alias vi='nvim'
+alias lg='lazygit'
 
 # ----- colors -----
 c_reset='\[\e[0m\]'
