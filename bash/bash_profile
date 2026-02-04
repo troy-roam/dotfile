@@ -1,6 +1,15 @@
+export PATH="$HOME/.gvm/bin:$PATH"
 export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# Up/Down arrow: search history for commands starting with what's already typed
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+alias ls='ls -G'
 alias ll='ls -alF'
 alias vi='nvim'
 alias lg='lazygit'
