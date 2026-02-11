@@ -1,5 +1,6 @@
 export PATH="$HOME/.gvm/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/colima/bin:$PATH"
 
 export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
 export BASH_SILENCE_DEPRECATION_WARNING=1
