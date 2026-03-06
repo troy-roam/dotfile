@@ -106,6 +106,52 @@ vim.api.nvim_set_keymap("n", "<Leader>F", ":Files<CR>", { noremap = true, silent
 
 ---------------------------------- lazy end ------------------------------------
 
+-- tagbar / ctags
+do
+    local candidates = {
+        "/opt/homebrew/bin/ctags", -- Homebrew (Apple Silicon)
+        "/usr/local/bin/ctags",    -- Homebrew (Intel)
+    }
+    for _, p in ipairs(candidates) do
+        if vim.fn.executable(p) == 1 then
+            vim.g.tagbar_ctags_bin = p
+            break
+        end
+    end
+end
+
+vim.g.tagbar_type_go = {
+    ctagstype = "go",
+    kinds = {
+        "p:package",
+        "i:imports",
+        "c:constants",
+        "v:variables",
+        "t:types",
+        "n:interfaces",
+        "w:fields",
+        "e:embedded",
+        "m:methods",
+        "r:constructor",
+        "f:functions",
+    },
+    sro = ".",
+    kind2scope = {
+        t = "type",
+        n = "interface",
+        w = "field",
+        e = "embedded",
+        m = "method",
+    },
+    scope2kind = {
+        type = "t",
+        interface = "n",
+        field = "w",
+        embedded = "e",
+        method = "m",
+    },
+}
+
 -- https://github.com/ellisonleao/gruvbox.nvim
 -- vim.o.background = "dark" -- "dark" or "light" for light mode
 
