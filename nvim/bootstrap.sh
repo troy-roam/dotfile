@@ -124,12 +124,11 @@ prime_nvim() {
     return
   fi
 
-  # nvim-treesitter (new API) installs parsers via Lua API + wait().
   log "installing baseline treesitter parsers in headless Neovim"
-  nvim --headless "+lua require('nvim-treesitter').install({'lua','vim','vimdoc','query','go'}):wait(300000)" +qa
+  nvim --headless "+TSInstallSync lua vim vimdoc query go" +qa
 
   log "updating installed treesitter parsers in headless Neovim"
-  nvim --headless "+lua require('nvim-treesitter').update():wait(300000)" +qa
+  nvim --headless "+TSUpdateSync" +qa
 }
 
 main() {

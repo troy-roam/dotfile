@@ -1,14 +1,19 @@
-local ok, ts = pcall(require, "nvim-treesitter")
+local ok, configs = pcall(require, "nvim-treesitter.configs")
 if not ok then
     return
 end
 
-ts.setup({
-    install_dir = vim.fn.stdpath("data") .. "/site",
+configs.setup({
+    ensure_installed = { "go" },
+    sync_install = false,
+    auto_install = false,
+    highlight = {
+        enable = true,
+    },
+    indent = {
+        enable = true,
+    },
 })
-
--- Keep your previous default parser choice.
-ts.install({ "go" })
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
@@ -20,14 +25,8 @@ vim.api.nvim_create_autocmd("FileType", {
             return
         end
 
-        -- Start Treesitter highlighting/injections for current buffer if parser exists.
-        pcall(vim.treesitter.start, args.buf)
-
         -- Use Treesitter folding with the new Neovim expression API.
         vim.wo[0][0].foldmethod = "expr"
         vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-
-        -- Keep Treesitter indentation enabled where supported.
-        vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end,
 })
