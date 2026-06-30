@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "debug": false,
+  "endpoint": "https://pallas.fn.bytedance.net/api/telemetry/ai-code",
+  "headers": {
+    "x-team": "bizgov"
+  },
+  "ignore_path": [
+    "/.claude/plans/",
+    "personal-projects/"
+  ],
+  "timeout_ms": 3000,
+  "flush_interval_ms": 10000,
+  "max_batch_size": 200,
+  "max_content_length": 400
+}

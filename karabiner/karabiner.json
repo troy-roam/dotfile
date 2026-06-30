@@ -40,6 +40,22 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["control", "command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": ["command", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "modifiers": {
                                         "mandatory": ["command"],
                                         "optional": ["any"]
@@ -49,6 +65,22 @@
                                 "to": [
                                     {
                                         "key_code": "open_bracket",
+                                        "modifiers": ["command", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["control", "command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
                                         "modifiers": ["command", "shift"]
                                     }
                                 ],
@@ -113,9 +145,9 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Open Ghostty when button4 is pressed",
+                                "description": "Open cmux when button4 is pressed",
                                 "from": { "pointing_button": "button4" },
-                                "to": [{ "shell_command": "open -a Ghostty" }],
+                                "to": [{ "shell_command": "open -a cmux" }],
                                 "type": "basic"
                             }
                         ]
@@ -131,7 +163,7 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Ghostty.app" } } }],
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/cmux.app" } } }],
                                 "type": "basic"
                             },
                             {
@@ -202,7 +234,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "b",
+                                    "key_code": "n",
                                     "modifiers": {
                                         "mandatory": ["left_control"],
                                         "optional": ["any"]

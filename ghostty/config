@@ -1,7 +1,8 @@
 copy-on-select       = clipboard
-theme                = light:"Kanagawa Dragon",dark:"Kanagawa Dragon"
+# theme                = light:"Kanagawa Dragon",dark:"Kanagawa Dragon"
+theme                = light:"Aardvark Blue",dark:"Aardvark Blue"
 font-feature         = -calt
-font-size            = 16
+font-size            = 18
 macos-titlebar-style = transparent
 macos-window-shadow  = true
 # font-family          = "JetBrains Mono SemiBold"
