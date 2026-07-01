@@ -145,9 +145,9 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Open cmux when button4 is pressed",
+                                "description": "Open Ghostty when button4 is pressed",
                                 "from": { "pointing_button": "button4" },
-                                "to": [{ "shell_command": "open -a cmux" }],
+                                "to": [{ "shell_command": "open -a Ghostty" }],
                                 "type": "basic"
                             }
                         ]
@@ -163,7 +163,7 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/cmux.app" } } }],
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Ghostty.app" } } }],
                                 "type": "basic"
                             },
                             {
