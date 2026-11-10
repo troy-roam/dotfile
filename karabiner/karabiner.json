@@ -145,9 +145,9 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Open Ghostty when button4 is pressed",
+                                "description": "Open Rex when button4 is pressed",
                                 "from": { "pointing_button": "button4" },
-                                "to": [{ "shell_command": "open -a Ghostty" }],
+                                "to": [{ "shell_command": "open -a \"Rex Beta\"" }],
                                 "type": "basic"
                             }
                         ]
@@ -163,7 +163,7 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Ghostty.app" } } }],
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Rex Beta.app" } } }],
                                 "type": "basic"
                             },
                             {
@@ -260,7 +260,6 @@
             },
             "devices": [
                 {
-                    "disable_built_in_keyboard_if_exists": true,
                     "identifiers": {
                         "is_keyboard": true,
                         "product_id": 668,
@@ -397,6 +396,15 @@
                     },
                     "ignore": false,
                     "mouse_flip_horizontal_wheel": true,
+                    "mouse_flip_vertical_wheel": true
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 45098,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
                     "mouse_flip_vertical_wheel": true
                 }
             ],
